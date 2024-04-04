@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TECSA</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Web_Seminario_DL.styles.css" asp-append-version="true" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet" />
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">TECSA</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Servicios">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Nosotros">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Clientes">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Contactanos">Contactanos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="">
+            @RenderBody()
+            <div class="containerchatbot">
+                <!-- Icono para abrir el chatbot -->
+                <div class="cnt-chat" onclick="toggleChatbot()">
+                    <div class="chat-icon">
+                        <img src="~/css/img/bot.png" alt="img-bot" />
+                    </div>
+                    <div class="chatbot-text">Hola, ¿Tienes alguna duda?</div>
+                </div>
+
+                <div class="chatbot" id="chatbot">
+                    <iframe id="chatbotFrame"
+                            class="miChatbot"
+                            src="https://webchat.botframework.com/embed/BOT-NQ-bot?s=AcxLf7gd28A.czTbUixtxLSogfUte0EpFP2lxYnzhAtvxYQvYtMXH8M"></iframe>
+                </div>
+            </div>
+         
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - Web_Seminario_DL - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        // Función para alternar la visibilidad del chatbot
+        function toggleChatbot() {
+            var chatbotFrame = document.getElementById("chatbotFrame");
+            var chatbot = document.getElementById("chatbot");
+            if (chatbotFrame.style.display === "none") {
+                chatbotFrame.style.display = "block";
+                chatbot.style.display = "block";
+            } else {
+                chatbotFrame.style.display = "none";
+                chatbot.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        // JavaScript para alternar la clase en respuesta a un clic
+        document.querySelector('.chat-icon img').addEventListener('click', function () {
+            this.classList.toggle('bounce');
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

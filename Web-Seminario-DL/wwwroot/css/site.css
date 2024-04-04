@@ -1,0 +1,178 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  height: 100vh;
+}
+
+/*Plantilla*/
+.container {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    height: calc(100vh - 58px - 50px);
+    position: relative;
+    padding: 0 !important;
+}
+
+.navbar {
+    margin: 0 !important;
+    padding: 20px;
+}
+
+.navbar-brand {
+    margin-left: 30px;
+    margin-right: 1070px;
+}
+
+.containerchatbot {
+    position: absolute;
+    bottom: 3px;
+    right: 0px;
+}
+
+.navbar{
+    margin: 0 !important;
+}
+
+/*Inicio pagina*/
+
+.imagen-fondo{
+    width: 100%;
+    height: 100%
+}
+.text-center{
+    background-image: url(img/fondo-inicio-2.jpg);
+    width: 100%;
+    height: 100%;
+}
+
+.titulo-1 {
+    padding-top: 20%;
+    color: white;
+    font-size: 76px;
+    font-weight: 600;
+    font-family: "Raleway", sans-serif;
+}
+
+.titulo-2 {
+    margin-top: -20px;
+    margin-bottom: 30px !important;
+    color: #00ffff;
+    font-size: 76px;
+    font-weight: 600;
+    font-family: "Raleway", sans-serif;
+}
+
+.subtitulo-1 {
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: white;
+}
+
+.botton {
+    background: transparent;
+    border-style: none;
+    padding: 10px 30px;
+    border: solid 4px #00ffff;
+    border-radius: 35px;
+}
+
+.url {
+    text-decoration: none;
+    color: white;
+    font-size: 39px;
+}
+
+/*Chat - Bot*/
+.container_chatbot {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    z-index: 999;
+}
+
+.cnt-chat {
+    position: relative;
+    width: 350px;
+    height: 80px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #393838;
+}
+
+.chatbot-text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    display: block;
+}
+
+.chat-icon {
+    margin: 10px;
+}
+
+    .chat-icon img {
+        height: 60px;
+        width: 60px;
+        animation: bounce 1s ease-in-out 10;
+    }
+
+.chatbot {
+    display: none;
+    height: 700px;
+    width: 500px;
+    border-radius: 20px;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.miChatbot {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: 3px solid #393838;
+    font-family: Arial, sans-serif;
+    display: none;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
